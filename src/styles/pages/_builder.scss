@@ -1,0 +1,84 @@
+@use "../variables"as v;
+
+#builder-root {
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+#builder-body {
+    display: flex;
+    flex-grow: 1;
+
+    #variable-menu {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+
+        width: 70%;
+
+        & > :nth-child(1) {
+            box-sizing: border-box;
+            width: 45%;
+            margin-left:  v.$variable-menu-horizontal-margin;
+            margin-right: v.$variable-menu-horizontal-margin;
+        }
+
+        & > :nth-child(2) {
+            width: 50%;
+        }
+    }
+
+    // div.builder-column:nth-child(2) {
+    //     width: 40%;
+    //     margin-left:  5%;
+    //     margin-right: 5%;
+    // }
+
+    #character-status {
+        width: 30%;
+    }
+}
+
+.attribute-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    span {
+        color: v.$body-color-fg;
+        font-size: v.$stat-row-font-size;
+    }
+}
+
+.attribute-control {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    height: 100%;
+
+    span.attribute-value {
+        margin-left: 0.25rem;
+        margin-right: 0.25rem;
+        min-height: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+    svg {
+        transform: scale(0.6);
+        filter: drop-shadow(v.$text-shadow-offset v.$text-shadow-offset 0.75px rgb(0, 0, 0));
+        color: v.$body-color-fg;
+    }
+}
+
+section.armor,
+section.armaments {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
